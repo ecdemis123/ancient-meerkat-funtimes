@@ -1,0 +1,52 @@
+GIT
+  remote: git@github.com:dollarshaveclub/active_merchant.git
+  revision: dd50360c809ff1ec24e94f7ccc3780ecfa8b22e8
+  branch: attempt-numero-dos
+  specs:
+    activemerchant (1.34.1)
+      active_utils (>= 1.0.2)
+      activesupport (>= 2.3.14)
+      builder (>= 2.0.0)
+      i18n
+      json (>= 1.5.1)
+      money
+      nokogiri (< 1.6.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    active_utils (2.2.3)
+      activesupport (>= 2.3.11)
+      i18n
+    activesupport (4.0.13)
+      i18n (~> 0.6, >= 0.6.9)
+      minitest (~> 4.2)
+      multi_json (~> 1.3)
+      thread_safe (~> 0.1)
+      tzinfo (~> 0.3.37)
+    braintree (2.69.1)
+      builder (>= 2.0.0)
+    builder (3.2.2)
+    i18n (0.7.0)
+    json (2.0.2)
+    minitest (4.7.5)
+    money (6.8.0)
+      i18n (>= 0.6.4, <= 0.7.0)
+      sixarm_ruby_unaccent (>= 1.1.1, < 2)
+    multi_json (1.12.1)
+    nokogiri (1.5.11)
+    sixarm_ruby_unaccent (1.1.1)
+    thread_safe (0.3.5)
+    tzinfo (0.3.52)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  active_utils (~> 2.2.3)
+  activemerchant!
+  activesupport (~> 4.0.0)
+  braintree
+
+BUNDLED WITH
+   1.13.7
