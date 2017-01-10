@@ -2,37 +2,37 @@ require 'rubygems'
 require 'activemerchant'
 require 'json'
 
-client = ActiveMerchant::Billing::BraintreePinkGateway.new(:access_token => 'access_token$sandbox$nb8654qnrrw3jwkn$3deb3954ecdc555eb2e6a35dc1c08650')
+client = ActiveMerchant::Billing::BraintreePinkGateway.new(:access_token => 'access_token$sandbox$ggbf823q5hkmc8k3$05bd9484bfe6fdca02ad3afcce5605fc')
 
-nonce = "fake-paypal-future-nonce"
+nonce = "16e280d1-1940-0ead-216d-de635fda074e"
 
-options = {
+authorization_id = "cevb2cv6"
+
+options_for_sale = {
+  :payment_method_nonce => true,
+  :store_in_vault_on_success => true,
   :merchant_account_id => "USD",
-  :descriptor => {
-    :name => "company*my product",
-    :phone => "3125551212",
-    :url => "company.com"
-  },
-  :shipping => {
+  :descriptor_name => "company*my product",
+  :descriptor_phone => "3125551212",
+  :descriptor_url => "company.com",
+  :custom_field => "ELLIE RULES",
+  :description => "SHE IS A GENERAL BADASS",
+  :shipping_address => {
     :first_name => "Jen",
     :last_name => "Smith",
     :company => "Braintreelaskldjfalksdf",
-    :street_address => "1 E 1st St",
-    :extended_address => "Suite 403",
-    :locality => "Bartlett",
-    :region => "IL",
-    :postal_code => "60103",
+    :address1 => "1 E 1st St",
+    :address2 => "Suite 403",
+    :city => "Bartlett",
+    :state => "IL",
+    :zip => "60103",
     :country_code_alpha2 => "US"
-  },
-  :options => {
-    :paypal => {
-      :custom_field => "PayPal custom field",
-      :description => "Description for PayPal email receipt",
-    },
-    :store_in_vault_on_success => true
   }
 }
 
-response = client.authorize(10, nonce, options)
+
+# response = client.authorize(10, nonce, options)
+
+response = client.capture(10.00, authorization_id)
 
 puts response.inspect
