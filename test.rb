@@ -4,12 +4,15 @@ require 'json'
 
 client = ActiveMerchant::Billing::BraintreePinkGateway.new(:access_token => 'access_token$sandbox$ggbf823q5hkmc8k3$05bd9484bfe6fdca02ad3afcce5605fc')
 
-nonce = "16e280d1-1940-0ead-216d-de635fda074e"
+nonce = "43ccaadc-6b80-00a8-28d0-7afe6e3fb518"
+
+token = "fvy7ct"
 
 authorization_id = "cevb2cv6"
 
 options_for_sale = {
-  :payment_method_nonce => true,
+  :payment_method_token => true,
+  :email => 'eleanor_demis@gmail.com',
   :store_in_vault_on_success => true,
   :merchant_account_id => "USD",
   :descriptor_name => "company*my product",
@@ -31,8 +34,8 @@ options_for_sale = {
 }
 
 
-# response = client.authorize(10, nonce, options)
+response = client.authorize(10, token, options_for_sale)
 
-response = client.capture(10.00, authorization_id)
-
+#response = client.capture(10.00, authorization_id)
+puts "---------------"
 puts response.inspect
