@@ -226,7 +226,8 @@ sale with updated attributes
 "type"=>"sale",
 "created_at"=>2017-01-10 21:26:24 UTC,
 "updated_at"=>2017-01-10 21:26:30 UTC,
-"channel"=>"ActiveMerchant"}
+"channel"=>"ActiveMerchant"
+}
   },
 @message="1000 Approved",
 @success=true,

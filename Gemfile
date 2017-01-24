@@ -2,7 +2,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem 'activemerchant', git: 'git@github.com:dollarshaveclub/active_merchant.git', branch: 'attempt-numero-dos'
+gem 'activemerchant', git: 'git@github.com:dollarshaveclub/active_merchant.git', branch: 'master'
 
 gem 'active_utils', '~>2.2.3'
 
